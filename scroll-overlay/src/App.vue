@@ -2,8 +2,10 @@
 .overlay {
   border: 1px solid #CCC;
   border-radius: 4px;
-  height: 300px;
-  width: 300px;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 600px;
+  max-width: 600px;
 }
 .item {
   height: 50px;
@@ -18,7 +20,10 @@
 
 <template>
   <div>
-    <overlay-scrollbars ref="scrollbars" class="overlay">
+    <overlay-scrollbars
+      ref="scrollbars"
+      class="overlay"
+      :options="{ scrollbars: { autoHide: 'scroll' }, resize: 'both' }">
       <div
         class="item"
         v-for="n in count"
